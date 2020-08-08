@@ -180,7 +180,7 @@ for (const index in semesters) {
     let rows = '';
     for (r = 0; r < sem_courses.length; r++) {
         const c = sem_courses[r];
-        const row = `<div class="Rtable-row">
+        const row = `<div class="Rtable-row ${ r%2!== 0? 'is-striped' :''}">
     <div class="Rtable-cell name-cell">
         <div class="Rtable-cell--heading">Name</div>
         <div class="Rtable-cell--content date-content">

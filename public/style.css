@@ -18,7 +18,7 @@ body {
 }
 
 .is-striped {
-  background-color: rgba(233, 200, 147, 0.2);
+  background-color: #e3f5fc;
 }
 
 /* Table column sizing
@@ -64,7 +64,7 @@ body {
   list-style: none;
 }
 .Rtable .Rtable-row .Rtable-cell.column-heading {
-  background-color: #43BAC0;
+  background-color: #16b4eb;
   color: white;
   padding: 1em;
 }
