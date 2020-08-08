@@ -1,3 +1,259 @@
+const semesters = [
+    {
+        id: 'ws2019',
+        name: 'Winter Semester - 2019/2020',
+        current: 2019,
+        prev: 2018,
+        select: false
+    },
+    {
+        id: 'ss2020',
+        name: 'Summer Semester - 2020',
+        current: 2020,
+        prev: 2019,
+        select: true
+    },
+    {
+        id: 'ws2020',
+        name: 'Winter Semester - 2020/2021',
+        current: 2020,
+        prev: 2019,
+        select: false
+    },
+    {
+        id: 'ss2021',
+        name: 'Summer Semester - 2021',
+        current: 2021,
+        prev: 2020,
+        select: false
+    }
+]
+const courses = {
+    ws2019: [
+        {
+            name: 'Systems Engineering 1',
+            module: 'DSE-M1 (Systems Engineering)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/systems_engineering_1',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/systems_engineering_1/wintersemester-2019-2020',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/systems_engineering_1/wintersemester-2018-2019',
+            forum: 'https://auditorium.inf.tu-dresden.de/en/groups/110631001'
+        },
+        {
+            name: 'Systems Engineering 2',
+            module: 'DSE-M1 (Systems Engineering)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/systems_engineering_2',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/systems_engineering_2/wintersemester-2019-2020',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/systems_engineering_2/wintersemester-2018-2019',
+            forum: 'https://auditorium.inf.tu-dresden.de/en/groups/110631002'
+        },
+        {
+            name: 'Distributed Systems',
+            module: 'DSE-M2 (Ubiquitous Systems)',
+            home: 'http://www.inf.tu-dresden.de/index.php?node_id=2568&ln=en&lv_id=24',
+            current: 'http://www.inf.tu-dresden.de/index.php?node_id=2568&ln=en&lv_id=24'
+        },
+        {
+            name: 'Mobile Communication/Computing',
+            module: 'DSE-M2 (Ubiquitous Systems)',
+            home: 'http://www.inf.tu-dresden.de/index.php?node_id=2568&ln=en&lv_id=16',
+            current: 'http://www.inf.tu-dresden.de/index.php?node_id=2568&ln=en&lv_id=16',
+        },
+        {
+            name: 'Transactional Information Systems',
+            module: 'DSE-M3 (Transactional & Secure Platforms)',
+            home: 'https://wwwdb.inf.tu-dresden.de/study/teaching/winter-term-2019-20/transactional-information-systems/',
+            current: 'https://wwwdb.inf.tu-dresden.de/study/teaching/winter-term-2019-20/transactional-information-systems/',
+            prev: 'https://wwwdb.inf.tu-dresden.de/study/teaching/teaching-archive/winter-term-2018-19/transactional-information-systems/'
+        },
+        {
+            name: 'Security and Cryptography I',
+            module: 'DSE-M3 (Transactional & Secure Platforms)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/ps/studium/lectures/sac-i',
+            current: 'https://tu-dresden.de/ing/informatik/sya/ps/studium/lectures/sac-i'
+        },
+        {
+            name: 'Design Patterns And Framework',
+            module: 'DSE-M4 (System Design)',
+            home: 'https://tu-dresden.de/ing/informatik/smt/st/studium/lehrveranstaltungen?leaf=1&lang=en&subject=409&embedding_id=47eddfa7c5a54ed5be49042aff35a31b',
+            current: 'https://tu-dresden.de/ing/informatik/smt/st/studium/lehrveranstaltungen?leaf=1&lang=en&subject=409&embedding_id=47eddfa7c5a54ed5be49042aff35a31b'
+        }
+    ],
+    ss2020: [
+        {
+            name: 'Security and Cryptography II',
+            module: 'DSE-E1 (Advanced Security and Cryptography)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/ps/studium/lectures/sac-ii',
+            current: 'https://tu-dresden.de/ing/informatik/sya/ps/studium/lectures/sac-ii'
+        }, {
+            name: 'Wireless Sensor Networks',
+            module: 'DSE-E2 (Wireless Sensor Networks)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=45',
+            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=45'
+        }, {
+            name: 'Distributed Operating Systems',
+            module: 'DSE-E3 (Distributed Operating Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/dos',
+            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/dos',
+            forum: 'https://auditorium.inf.tu-dresden.de/en/groups/110804132'
+        }, {
+            name: 'Component-Based Software Engineering',
+            module: 'DSE-E4 (Component-Based Software Engineering)',
+            home: 'https://tu-dresden.de/ing/informatik/smt/st/studium/lehrveranstaltungen?leaf=1&lang=en&subject=394&embedding_id=47eddfa7c5a54ed5be49042aff35a31b',
+            current: 'https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/23119134765',
+            prev: 'https://tu-dresden.de/ing/informatik/smt/st/studium/lehrveranstaltungen?subject=394&lang=en&leaf=1&head=2&embedding_id=47eddfa7c5a54ed5be49042aff35a31b',
+        }, {
+            name: 'Internet and Web Applications',
+            module: 'DSE-E5 (Selected Areas of Internet-based Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=50',
+            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=50'
+        }, {
+            name: 'Foundations of Concurrent and Distributed Systems',
+            module: 'DSE-E6 (Concurrent and Distributed Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/summer-semester/foundations-of-concurrent-and-distributed-systems-1',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/summer-semester/foundations-of-concurrent-and-distributed-systems-1/fcds-summer-term-2020',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/summer-semester/foundations-of-concurrent-and-distributed-systems-1/fcds-summer-term-2019',
+            forum: 'https://auditorium.inf.tu-dresden.de/en/groups/110631015'
+        }, {
+            name: 'Lab: Concurrent and Distributed Systems',
+            module: 'DSE-E6 (Concurrent and Distributed Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/concurrent_and_distributed_systems_lab?set_language=en&cl=en',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/concurrent_and_distributed_systems_lab/summer-semester-2020',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/concurrent_and_distributed_systems_lab/summer-semester-2019',
+            forum: 'https://auditorium.inf.tu-dresden.de/en/groups/2023686'
+        }, {
+            name: 'Software Fault Tolerance',
+            module: 'DSE-E7 (Software Fault Tolerance)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/summer-semester/software_fault_tolerance?set_language=en&cl=en',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/summer-semester/software_fault_tolerance/summer-semester-2020',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/summer-semester/software_fault_tolerance/summer-semester-2019',
+            forum: 'https://auditorium.inf.tu-dresden.de/en/groups/110631004'
+        }, {
+            name: 'Seminar: Current Topics in Dependable Systems',
+            module: 'DSE-E11 (Principles of Dependable Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems?set_language=en&cl=en',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems?set_language=en&cl=en',
+            forum: 'https://auditorium.inf.tu-dresden.de/en/groups/110631003'
+        },
+    ],
+    ws2020: [
+        {
+            name: 'Microkernel-based Operating Systems',
+            module: 'DSE-E8 (Microkernel-based Operating Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/mos',
+            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/mos',
+        }, {
+            name: 'Real-Time Systems [NOT OFFERED]',
+            module: 'DSE-E9 (Real-Time Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/rts',
+            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/rts',
+        }, {
+            name: 'Application Development for M&U Computing',
+            module: 'DSE-E10',
+            home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=48',
+            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=48',
+        }, {
+            name: 'Principles of Dependable Systems',
+            module: 'DSE-E11 (Principles of Dependable Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/principles_of_dependable_systems',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/principles_of_dependable_systems/winter-semester-2019'
+        },
+    ],
+    ss2021: [
+
+    ]
+}
+
+
+let semesterSelect = document.getElementById("sem-select");
+let tablesElement = document.getElementById("tables");
+let tables = '';
+for (const index in semesters) {
+    let option = document.createElement("option");
+    option.text = semesters[index].name;
+    option.value = semesters[index].id;
+    if (semesters[index].select) {
+        option.setAttribute('selected', 'selected');
+    }
+    semesterSelect.add(option);
+
+    const sem_courses = courses[semesters[index].id];
+    let rows = '';
+    for (r = 0; r < sem_courses.length; r++) {
+        const c = sem_courses[r];
+        const row = `<div class="Rtable-row">
+    <div class="Rtable-cell name-cell">
+        <div class="Rtable-cell--heading">Name</div>
+        <div class="Rtable-cell--content date-content">
+            <span class="webinar-name">${c.name}</span>
+        </div>
+    </div>
+    <div class="Rtable-cell details-cell">
+        <div class="Rtable-cell--content title-content">${c.module}</div>
+    </div>
+    <div class="Rtable-cell course-page-cell">
+        <div class="Rtable-cell--heading">Index</div>
+        <div class="Rtable-cell--content access-link-content">
+            <a target="_blank"
+               href="${c.home}">
+                <i class="material-icons">
+                    link
+                </i>
+            </a>
+        </div>
+    </div>
+    <div class="Rtable-cell material-link-cell">
+        <div class="Rtable-cell--heading">${semesters[index].current}</div>
+        <div class="Rtable-cell--content replay-link-content">
+        <a target="_blank"
+        href="${c.current ? c.current : '#'}">
+         <i class="material-icons">
+             ${c.current ? 'folder' : 'error_outline'}
+         </i>
+     </a>
+        </div>
+    </div>
+    <div class="Rtable-cell material-link-cell">
+        <div class="Rtable-cell--heading">${semesters[index].prev}</div>
+        <div class="Rtable-cell--content replay-link-content">
+            <a target="_blank"
+               href="${c.prev ? c.prev : '#'}">
+                <i class="material-icons">
+                    ${c.prev ? 'folder' : 'error_outline'}
+                </i>
+            </a>
+        </div>
+    </div>
+    <div class="Rtable-cell Rtable-cell--foot forum-cell">
+        <div class="Rtable-cell--heading">Forum</div>
+        <div class="Rtable-cell--content pdf-content">
+            <a target="_blank" href="${c.forum ? c.forum : '#'}">
+                <i class="material-icons">
+                    ${c.forum ? 'forum' : 'error_outline'}
+                </i>
+            </a>
+        </div>
+    </div>
+</div>`
+        rows = rows.concat(row);
+    }
+
+    const table = `<div id="${semesters[index].id}" class="Rtable Rtable--5cols Rtable--collapse">
+    <div class="Rtable-row Rtable-row--head">
+        <div class="Rtable-cell name-cell column-heading">Name</div>
+        <div class="Rtable-cell details-cell column-heading">Details</div>
+        <div class="Rtable-cell course-page-cell column-heading">Index</div>
+        <div class="Rtable-cell material-link-cell column-heading">${semesters[index].current}</div>
+        <div class="Rtable-cell material-link-cell column-heading">${semesters[index].prev}</div>
+        <div class="Rtable-cell forum-cell column-heading">Forum</div>
+    </div>
+    ${rows}
+    </div>
+    `
+    tables = tables.concat(table);
+}
+
+tablesElement.innerHTML = tables;
+
 // Code taken from internet.
 let x, i, j, selectElement, a, b, c;
 /*look for any elements with the class "custom-select":*/
@@ -46,12 +302,12 @@ for (i = 0; i < x.length; i++) {
         e.stopPropagation();
         let semEl = document.getElementById("sem-select");
         let sem = semEl.options[semEl.selectedIndex].value;
-        console.log(sem);
+        // console.log(sem);
         if (sem !== "sem") {
             // document.getElementById(sem)
             for (let index = 0; index < semEl.options.length; index++) {
                 const element = semEl.options[index];
-                console.log(sem, element.value);
+                // console.log(sem, element.value);
                 if (element.value !== "sem") {
                     if (element.value === sem) {
                         document.getElementById(element.value).style.display = "block";
@@ -87,17 +343,12 @@ function closeAllSelect(elmnt) {
     }
 }
 
-/*if the user clicks anywhere outside the select box,
-then close all select boxes:*/
-document.addEventListener("click", closeAllSelect);
-
-let semEl = document.getElementById("sem-select");
-let sem = semEl.options[semEl.selectedIndex].value;
+let sem = semesterSelect.options[semesterSelect.selectedIndex].value;
 
 if (sem !== "sem") {
     // document.getElementById(sem)
-    for (let index = 0; index < semEl.options.length; index++) {
-        const element = semEl.options[index];
+    for (let index = 0; index < semesterSelect.options.length; index++) {
+        const element = semesterSelect.options[index];
         // console.log(sem, element.value);
         if (element.value !== "sem") {
             if (element.value === sem) {
@@ -108,3 +359,7 @@ if (sem !== "sem") {
         }
     }
 }
+
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
