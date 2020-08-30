@@ -137,20 +137,28 @@ const courses = {
     ],
     ws2020: [
         {
+            name: 'Seminar: Software Fault Tolerance',
+            module: 'DSE-E7 (Software Fault Tolerance)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_software_fault_tolerance',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_software_fault_tolerance/winter-semester-2019-20',
+        },{
+            name: 'Lab: Software Fault Tolerance',
+            module: 'DSE-E7 (Software Fault Tolerance)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab/winter-semester-2019-20',
+        },{
             name: 'Microkernel-based Operating Systems',
             module: 'DSE-E8 (Microkernel-based Operating Systems)',
             home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/mos',
-            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/mos',
         }, {
             name: 'Real-Time Systems [NOT OFFERED]',
             module: 'DSE-E9 (Real-Time Systems)',
             home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/rts',
-            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/rts',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/rts',
         }, {
             name: 'Application Development for M&U Computing',
             module: 'DSE-E10',
             home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=48',
-            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=48',
         }, {
             name: 'Principles of Dependable Systems',
             module: 'DSE-E11 (Principles of Dependable Systems)',
