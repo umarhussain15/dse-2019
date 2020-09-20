@@ -11,14 +11,14 @@ const semesters = [
         name: 'Summer Semester - 2020',
         current: 2020,
         prev: 2019,
-        select: true
+        select: false
     },
     {
         id: 'ws2020',
         name: 'Winter Semester - 2020/2021',
         current: 2020,
         prev: 2019,
-        select: false
+        select: true
     },
     {
         id: 'ss2021',
