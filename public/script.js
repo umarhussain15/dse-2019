@@ -148,6 +148,7 @@ const courses = {
             home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab',
             current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab/ws20-21',
             prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab/winter-semester-2019-20',
+            forum:'https://auditorium.inf.tu-dresden.de/en/groups/2072311'
         },{
             name: 'Microkernel-based Operating Systems',
             module: 'DSE-E8 (Microkernel-based Operating Systems)',
