@@ -140,11 +140,13 @@ const courses = {
             name: 'Seminar: Software Fault Tolerance',
             module: 'DSE-E7 (Software Fault Tolerance)',
             home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_software_fault_tolerance',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_software_fault_tolerance/winter-semester-2020-21',
             prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_software_fault_tolerance/winter-semester-2019-20',
         },{
             name: 'Lab: Software Fault Tolerance',
             module: 'DSE-E7 (Software Fault Tolerance)',
             home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab/ws20-21',
             prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab/winter-semester-2019-20',
         },{
             name: 'Microkernel-based Operating Systems',
