@@ -142,31 +142,34 @@ const courses = {
             home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_software_fault_tolerance',
             current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_software_fault_tolerance/winter-semester-2020-21',
             prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_software_fault_tolerance/winter-semester-2019-20',
-        },{
+        }, {
             name: 'Lab: Software Fault Tolerance',
             module: 'DSE-E7 (Software Fault Tolerance)',
             home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab',
             current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab/ws20-21',
             prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/software_fault_tolerance_lab/winter-semester-2019-20',
-            forum:'https://auditorium.inf.tu-dresden.de/en/groups/2072311'
-        },{
+            forum: 'https://auditorium.inf.tu-dresden.de/en/groups/110804212'
+        }, {
             name: 'Microkernel-based Operating Systems',
             module: 'DSE-E8 (Microkernel-based Operating Systems)',
             home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/mos',
+            current: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/mos',
+        }, {
+            name: 'Application Development for M&U Computing',
+            module: 'DSE-E10',
+            home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=48',
+            current: 'https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/26582941705?0',
+        }, {
+            name: 'Principles of Dependable Systems',
+            module: 'DSE-E11 (Principles of Dependable Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/principles_of_dependable_systems',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/principles_of_dependable_systems/winter-semester-2020',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/principles_of_dependable_systems/winter-semester-2019'
         }, {
             name: 'Real-Time Systems [NOT OFFERED]',
             module: 'DSE-E9 (Real-Time Systems)',
             home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/rts',
             prev: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-betriebssysteme/studium/vorlesungen/rts',
-        }, {
-            name: 'Application Development for M&U Computing',
-            module: 'DSE-E10',
-            home: 'https://tu-dresden.de/ing/informatik/sya/professur-fuer-rechnernetze/studium/lehrveranstaltungen/lehrveranstaltungsdetails?ln=en&lv_id=48',
-        }, {
-            name: 'Principles of Dependable Systems',
-            module: 'DSE-E11 (Principles of Dependable Systems)',
-            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/principles_of_dependable_systems',
-            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/lehrveranstaltungen/winter-semester/principles_of_dependable_systems/winter-semester-2019'
         },
     ],
     ss2021: [
@@ -191,7 +194,7 @@ for (const index in semesters) {
     let rows = '';
     for (r = 0; r < sem_courses.length; r++) {
         const c = sem_courses[r];
-        const row = `<div class="Rtable-row ${ r%2!== 0? 'is-striped' :''}">
+        const row = `<div class="Rtable-row ${r % 2 !== 0 ? 'is-striped' : ''}">
     <div class="Rtable-cell name-cell">
         <div class="Rtable-cell--heading">Name</div>
         <div class="Rtable-cell--content date-content">
