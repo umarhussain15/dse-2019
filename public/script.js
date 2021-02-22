@@ -18,14 +18,14 @@ const semesters = [
         name: 'Winter Semester - 2020/2021',
         current: 2020,
         prev: 2019,
-        select: true
+        select: false
     },
     {
         id: 'ss2021',
         name: 'Summer Semester - 2021',
         current: 2021,
         prev: 2020,
-        select: false
+        select: true
     }
 ]
 const courses = {
@@ -173,7 +173,12 @@ const courses = {
         },
     ],
     ss2021: [
-
+        {
+            name: 'Seminar: Current Topics in Dependable Systems',
+            module: 'DSE-E11 (Principles of Dependable Systems)',
+            home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems',
+            prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems/summer-semester-2020',
+        }
     ]
 }
 
