@@ -177,6 +177,7 @@ const courses = {
             name: 'Seminar: Current Topics in Dependable Systems',
             module: 'DSE-E11 (Principles of Dependable Systems)',
             home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems/summer-semester-2021',
             prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems/summer-semester-2020',
         }
     ]
