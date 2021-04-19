@@ -4,21 +4,21 @@ const semesters = [
         name: 'Winter Semester - 2019/2020',
         current: 2019,
         prev: 2018,
-        select: false
+        select: true
     },
     {
         id: 'ss2020',
         name: 'Summer Semester - 2020',
         current: 2020,
         prev: 2019,
-        select: false
+        select: true
     },
     {
         id: 'ws2020',
         name: 'Winter Semester - 2020/2021',
         current: 2020,
         prev: 2019,
-        select: false
+        select: true
     },
     {
         id: 'ss2021',
@@ -177,6 +177,7 @@ const courses = {
             name: 'Seminar: Current Topics in Dependable Systems',
             module: 'DSE-E11 (Principles of Dependable Systems)',
             home: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems',
+            current: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems/summer-semester-2021',
             prev: 'https://tu-dresden.de/ing/informatik/sya/se/studium/labs-seminars/seminar_current_topics_in_dependable_systems/summer-semester-2020',
         }
     ]
@@ -186,7 +187,7 @@ const courses = {
 let semesterSelect = document.getElementById("sem-select");
 let tablesElement = document.getElementById("tables");
 let tables = '';
-for (const index in semesters) {
+for (index = semesters.length - 1; index >= 0; index--) {
     let option = document.createElement("option");
     option.text = semesters[index].name;
     option.value = semesters[index].id;
@@ -256,7 +257,8 @@ for (const index in semesters) {
         rows = rows.concat(row);
     }
 
-    const table = `<div id="${semesters[index].id}" class="Rtable Rtable--5cols Rtable--collapse">
+    const table = `<h4>${semesters[index].name}</h4>
+    <div id="${semesters[index].id}" class="Rtable Rtable--5cols Rtable--collapse">
     <div class="Rtable-row Rtable-row--head">
         <div class="Rtable-cell name-cell column-heading">Name</div>
         <div class="Rtable-cell details-cell column-heading">Details</div>
@@ -364,20 +366,20 @@ function closeAllSelect(elmnt) {
 
 let sem = semesterSelect.options[semesterSelect.selectedIndex].value;
 
-if (sem !== "sem") {
-    // document.getElementById(sem)
-    for (let index = 0; index < semesterSelect.options.length; index++) {
-        const element = semesterSelect.options[index];
-        // console.log(sem, element.value);
-        if (element.value !== "sem") {
-            if (element.value === sem) {
-                document.getElementById(element.value).style.display = "block";
-            } else {
-                document.getElementById(element.value).style.display = "none";
-            }
-        }
-    }
-}
+// if (sem !== "sem") {
+//     // document.getElementById(sem)
+//     for (let index = 0; index < semesterSelect.options.length; index++) {
+//         const element = semesterSelect.options[index];
+//         // console.log(sem, element.value);
+//         if (element.value !== "sem") {
+//             if (element.value === sem) {
+//                 document.getElementById(element.value).style.display = "block";
+//             } else {
+//                 document.getElementById(element.value).style.display = "block";
+//             }
+//         }
+//     }
+// }
 
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
